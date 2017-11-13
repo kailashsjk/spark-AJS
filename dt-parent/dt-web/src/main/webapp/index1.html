@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <base href="/"/> -->
+  <title>Design Thinking</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  <script src="lib/jquery.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="lib/uiBreadcrumbs.js"></script>
+    
+    <script src="module/module.js"></script>
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/menuController.js"></script>
+    <script src="controllers/projectController.js"></script>
+    <script src="controllers/selectProjectController.js"></script>
+     <script src="controllers/prototypingController.js"></script>
+    <script src="controllers/selectPrototypingController.js"></script>
+    <!--<script src="controllers/ideasController.js"></script>
+    <script src="controllers/ideaFeedbackController.js"></script>
+    <script src="controllers/prototypingController.js"></script>
+    <script src="controllers/prototypeFeedbackController.js"></script>-->
+    <script src="services/projectService.js"></script>
+    <script src="services/prototypingService.js"></script>
+</head>
+<body ng-app = "designThinking">
+
+<div class="container-fluid">
+<!--  <div class="jumbotron">
+    <h2>Design Thinking</h2>
+  </div>-->
+<div class="panel panel-info">
+    <div class="panel-heading" style="text-align:center"><h2>Design Thinking</h2></div>
+</div>
+    <div>
+        <ui-breadcrumbs displayname-property="data.displayName" abstract-proxy-property="data.proxy" template-url="partials/uiBreadcrumbs.tpl.html"></ui-breadcrumbs></div>
+    <div ui-view="main" class="container"></div>
+    <div ui-view="details" class="container"></div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<div class="panel panel-danger">
+    <div class="panel-heading" style="text-align:center">Car Detail</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3" style="font-weight: bold">
+        Car Details :
+    </div>
+    
+</div><br>    
+
+<!--sample pic chart  -->   
+
+ <div >
+                   
+                        <table >
+                           
+                            <tbody>
+                              <tr >
+                              <td>
+
+<div >
+
+
+<h1>HTML Pie Chart</h1>
+  <p>data.</p>
+  <section>
+ <script>
+  function sliceSize(dataNum, dataTotal) {
+	  return (dataNum / dataTotal) * 360;
+	}
+	function addSlice(sliceSize, pieElement, offset, sliceID, color) {
+	  $(pieElement).append("<div class='slice "+sliceID+"'><span></span></div>");
+	  var offset = offset - 1;
+	  var sizeRotation = -179 + sliceSize;
+	  $("."+sliceID).css({
+	    "transform": "rotate("+offset+"deg) translate3d(0,0,0)"
+	  });
+	  $("."+sliceID+" span").css({
+	    "transform"       : "rotate("+sizeRotation+"deg) translate3d(0,0,0)",
+	    "background-color": color
+	  });
+	}
+	function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+	  var sliceID = "s"+dataCount+"-"+sliceCount;
+	  var maxSize = 179;
+	  if(sliceSize<=maxSize) {
+	    addSlice(sliceSize, pieElement, offset, sliceID, color);
+	  } else {
+	    addSlice(maxSize, pieElement, offset, sliceID, color);
+	    iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
+	  }
+	}
+	function createPie(dataElement, pieElement) {
+	  var listData = [];
+	  $(dataElement+" span").each(function() {
+	    listData.push(Number($(this).html()));
+	  });
+	  var listTotal = 0;
+	  for(var i=0; i<listData.length; i++) {
+	    listTotal += listData[i];
+	  }
+	  var offset = 0;
+	  var color = [
+	    "cornflowerblue", 
+	    "olivedrab", 
+	    "orange", 
+	    "tomato", 
+	    "crimson", 
+	    "purple", 
+	    "turquoise", 
+	    "forestgreen", 
+	    "navy", 
+	    "gray",
+	    "red"
+	  ];
+	  for(var i=0; i<listData.length; i++) {
+	    var size = sliceSize(listData[i], listTotal);
+	    iterateSlices(size, pieElement, offset, i, 0, color[i]);
+	    $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
+	    offset += size;
+	  }
+	}
+	createPie(".pieID.legend", ".pieID.pie");
+
+  </script> 
+  
+    <div  class="pieID pie">
+      
+    </div>
+    <ul class="pieID legend">
+      <li>
+        <em>Station Wagon</em>
+        <span>718</span>
+      </li>
+      <li>
+        <em>Sedan</em>
+        <span>531</span>
+      </li>
+      <li>
+        <em>medium suv</em>
+        <span>868</span>
+      </li>
+      <li>
+        <em>large suv</em>
+        <span>344</span>
+      </li>
+      <li>
+        <em>Sports Car</em>
+        <span>1244</span>
+      </li>
+      <li>
+        <em>Coupe</em>
+        <span>44</span>
+      </li>
+      <li>
+        <em>Convertible</em>
+        <span>1444</span>
+      </li>
+      <li>
+        <em>Family Saloon</em>
+        <span>244</span>
+      </li>
+      <li>
+        <em>Hybrid</em>
+        <span>344</span>
+      </li>
+      <li>
+        <em>small suv</em>
+        <span>1145</span>
+      </li>
+      <li>
+        <em>Compact Car</em>
+        <span>145</span>
+      </li>
+     
+    </ul>
+  </section>
+  <section>
+    <p>Also, check out my <a href="http://codepen.io/ejsado/pen/HLgzK">Google Charts restyling</a>.</p>
+  </section>
+
+<footer>
+  An original pen by <a href="http://codepen.io/ejsado/">Eric</a>.
+</footer>
+
+
+ 
+</div>
+
+</td>
+
+<!-- alterd data for model count -->
+<!-- <td>
+ <div >
+
+
+<h1>HTML Pie Chart</h1>
+  <p>data.</p>
+  <section>
+ <script>
+  function sliceSize(dataNum, dataTotal) {
+	  return (dataNum / dataTotal) * 360;
+	}
+	function addSlice(sliceSize, pieElement, offset, sliceID, color) {
+	  $(pieElement).append("<div class='slice "+sliceID+"'><span></span></div>");
+	  var offset = offset - 1;
+	  var sizeRotation = -179 + sliceSize;
+	  $("."+sliceID).css({
+	    "transform": "rotate("+offset+"deg) translate3d(0,0,0)"
+	  });
+	  $("."+sliceID+" span").css({
+	    "transform"       : "rotate("+sizeRotation+"deg) translate3d(0,0,0)",
+	    "background-color": color
+	  });
+	}
+	function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
+	  var sliceID = "s"+dataCount+"-"+sliceCount;
+	  var maxSize = 179;
+	  if(sliceSize<=maxSize) {
+	    addSlice(sliceSize, pieElement, offset, sliceID, color);
+	  } else {
+	    addSlice(maxSize, pieElement, offset, sliceID, color);
+	    iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
+	  }
+	}
+	function createPie(dataElement, pieElement) {
+	  var listData = [];
+	  $(dataElement+" span").each(function() {
+	    listData.push(Number($(this).html()));
+	  });
+	  var listTotal = 0;
+	  for(var i=0; i<listData.length; i++) {
+	    listTotal += listData[i];
+	  }
+	  var offset = 0;
+	  var color = [
+	    "cornflowerblue", 
+	    "olivedrab", 
+	    "orange", 
+	    "tomato", 
+	    "crimson", 
+	    "purple", 
+	    "turquoise", 
+	    "forestgreen", 
+	    "navy", 
+	    "gray",
+	    "red"
+	  ];
+	  for(var i=0; i<listData.length; i++) {
+	    var size = sliceSize(listData[i], listTotal);
+	    iterateSlices(size, pieElement, offset, i, 0, color[i]);
+	    $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
+	    offset += size;
+	  }
+	}
+	createPie(".pieID.legend", ".pieID.pie");
+
+  </script> 
+  
+    <div  class="pieID pie">
+     </div> 
+  
+  
+    <ul class="pieID legend" ng-init="getModelCount()">
+      <li ng-repeat="car in carDetails">
+        <em>{{car.model}}</em>
+        <span>{{car.modelCount}}</span>
+      </li>
+     
+    </ul>
+   
+    
+  </section>
+ <footer>
+  An original pen by <a href="http://codepen.io/ejsado/">Eric</a>.
+</footer>
+ 
+</div>
+
+</td> 
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<!--  table for model and city-->
+
+ <div class="panel panel-default">
+                    
+                    <div ng-init="getModelCount()">
+                   
+                        <table class="panel-body table table-condensed">
+                            <thead class="panel-heading">
+                              <tr>
+                               
+                                <th>model</th>
+                               
+                                <th>city</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="car in carDetails">
+                                
+                                <td>
+                                    <div>{{car.model}}</div>
+                                    
+                                </td>
+                                
+                                <td>
+                                    <div>{{car.modelCount}}</div>
+                                   
+                                </td>
+                                
+                                </tr>                          
+                            </tbody>
+                        </table>
+             </div>
+    </div> 
+

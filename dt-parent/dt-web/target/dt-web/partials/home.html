@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Data tables</title>
+  <link rel="stylesheet" href="css/angular-chart.css">
+  <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body ng-app="designThinking">
+<div class="container"></div>
+<div id="container" class="container">
+  <div class="row" ng-controller="DataTablesCtrl">
+    
+    <div class="col-lg-6 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Stacked Bar Chart</div>
+        <div class="panel-body">
+            <canvas class="chart chart-bar" chart-data="dataStacked" chart-labels="labelsStacked"
+                    chart-options="options" chart-series="series"></canvas>
+        </div>
+      </div>
+    </div>
+      <div class="col-lg-6 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Stacked Doughnut Chart</div>
+        <div class="panel-body">
+          <canvas class="chart chart-doughnut" chart-data="data" chart-dataset-override="datasetOverride" chart-series="series" chart-labels="labels"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

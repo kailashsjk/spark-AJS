@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <base href="/"/> -->
+  <title>Car Record count</title>
+  <!-- <meta charset="utf-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="css/bootstrap.min.css">
+       <link rel="stylesheet" href="css/bootstrap.css">
+       <link rel="stylesheet" href="css/app.css">
+       <link rel="stylesheet" href="css/angular-chart.css">
+       <link rel="stylesheet" href="css/style.css">
+       <!-- <script src="lib/jquery.js"></script>
+       <script src="lib/bootstrap.min.js"></script>  -->
+       <!-- <script src="lib/angular.min.js"></script> -->
+        <script src="lib/angular.min.js"></script>
+       <!-- <script src="lib/angular-ui-router.js"></script>
+       <script src="lib/uiBreadcrumbs.js"></script> -->
+      
+      
+       <script src="lib/Chart.min.js"></script>
+       <!-- <script src="http://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script> -->
+       <script src="lib/angular-chart.js"></script>
+    
+      <!--  <script src="module/module.js"></script> -->
+   	   <!-- <script src="app.js"></script> -->
+       <script src="controllers/app.js"></script>
+       <script src="services/carRecordService.js"></script>
+   
+   
+</head>
+<body  ng-app = "examples" >
+
+<div class="container">
+<div id="container" class="container">
+  <div bgcolor="#E6E6FA" class="row" ng-controller="DataTablesCtrl" >
+    
+    <div class="col-lg-6 col-sm-12" ng-init="getModelCityCount()">
+      <div class="panel panel-default">
+        <div class="panel-heading">Aggressive drivers query</div>
+        <div class="panel-body">
+            <canvas class="chart chart-bar" chart-data="dataStacked" chart-labels="labelsStacked"
+                    chart-options="options" chart-series="series"></canvas>
+        </div>
+      </div>
+    </div>
+      <div class="col-lg-6 col-sm-12" ng-init="getModelCityCountdonut()">
+      <div class="panel panel-default">
+        <div class="panel-heading">Aggressive drivers query </div>
+        <div class="panel-body">
+                <canvas id="bar" class="chart chart-doughnut" chart-data="data" chart-dataset-override="datasetOverride" chart-series="series" chart-labels="labels" chart-options="options1"></canvas>
+       </div>
+      </div>
+    </div>
+       <div class="col-lg-6 col-sm-12" ng-init="getModelCount()">
+      <div class="panel panel-default">
+        <div class="panel-heading">Fuel-efficient drivers query </div>
+        <div class="panel-body">
+                <canvas id="bar2" class="chart chart-doughnut" chart-data="data2" chart-dataset-override="datasetOverride1" chart-series="series1" chart-labels="labels1" chart-options="options2"></canvas>
+       </div>
+      </div>
+    </div>
+     <div class="col-lg-6 col-sm-12" ng-init="getFuelEffModelCount()">
+      <div class="panel panel-default">
+        <div class="panel-heading">Fuel-efficient drivers query </div>
+        <div class="panel-body">
+        <canvas id="pie" class="chart chart-pie" chart-data="data3" chart-dataset-override="datasetOverride2" chart-labels="labels3" chart-options="options3"></canvas> 
+      <!--   <canvas id="bar2" class="chart chart-doughnut" chart-data="data2" chart-dataset-override="datasetOverride1" chart-series="series1" chart-labels="labels1" chart-options="options2"></canvas> -->
+       </div>
+      </div>
+    </div>
+    
+   
+ </div>
+  </div>
+
+
+
+<div  ng-controller="DataTablesCtrl1" class="panel panel-default">
+                    
+                    <div ng-init="getModelCount()">
+                   
+                        <table class="panel-body table table-condensed">
+                            <thead class="panel-heading">
+                              <tr>
+                               
+                                <th>model</th>
+                               
+                                <th>count</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="car in carDetails">
+                                
+                                <td>
+                                    <div>{{car.model}}</div>
+                                    
+                                </td>
+                                
+                                <td>
+                                    <div>{{car.modelCount}}</div>
+                                   
+                                </td>
+                                
+                                </tr>                          
+                            </tbody>
+                        </table>
+             </div>
+    </div> 
+    
+  
+    
+<!--     <div  ng-controller="DataTablesCtrl1" class="panel panel-default">
+                    
+                    <div ng-init="getModelCityCount()">
+                   
+                        <table class="panel-body table table-condensed">
+                            <thead class="panel-heading">
+                              <tr>
+                               
+                                <th>Model</th>
+                               
+                                <th>City</th>
+                                
+                                <th>count</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="car in carDetails">
+                                
+                                <td>
+                                    <div>{{car.model}}</div>
+                                    
+                                </td>
+                                
+                                <td>
+                                    <div>{{car.city}}</div>
+                                   
+                                </td>
+                                <td>
+                                    <div>{{car.count}}</div>
+                                   
+                                </td>
+                                
+                                </tr>                          
+                            </tbody>
+                        </table>
+             </div>
+    </div>  -->
+    
+ 
+    
+</div>
+</body>
+</html>
